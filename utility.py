@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
 
+
 class Utility:
-    video_speed = 1 #greater the number, greater the speed
+
+    video_speed = 1
     absolute_first_frame_index = 60
     square_rect = (250, 200, 410, 450)
     directory = "videos/"

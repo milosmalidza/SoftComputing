@@ -1,5 +1,6 @@
 import math
 
+
 class TrackingFrame:
 
     maxDistance = 25

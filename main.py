@@ -3,6 +3,7 @@ from utility import Utility
 from tracking_frame import TrackingFrame
 import math
 
+
 def getAbsoluteFirstFrame():
     cap = cv2.VideoCapture(Utility.directory + 'video1.mp4')
     cap.set(1, Utility.absolute_first_frame_index)
@@ -42,9 +43,9 @@ def main():
         while cap.isOpened():
             frame = None
             try:
-                frame = cv2.absdiff(absoluteFirstFrame, secondFrame)
-                fr = cv2.absdiff(firstFrame, secondFrame)
-                frame = cv2.addWeighted(frame, 0.3, fr, 2.9, -5)
+                af_sc_abs_frame = cv2.absdiff(absoluteFirstFrame, secondFrame)
+                fr_sc_abs_frame = cv2.absdiff(firstFrame, secondFrame)
+                frame = cv2.addWeighted(af_sc_abs_frame, 0.3, fr_sc_abs_frame, 2.9, -5)
             except:
                 break
 
@@ -108,7 +109,7 @@ def main():
                     if pot.potentialNotTick == 0:
                         potential.remove(pot)
 
-                #cv2.rectangle(firstFrame, (int(pot.position[0]), int(pot.position[1])), (int(pot.position[0]) + int(pot.width), int(pot.position[1]) + int(pot.height)), (255, 255, 0), 1)
+                cv2.rectangle(firstFrame, (int(pot.position[0]), int(pot.position[1])), (int(pot.position[0]) + int(pot.width), int(pot.position[1]) + int(pot.height)), (255, 255, 0), 1)
 
             for fc in filtered_contours:
                 x, y, w, h = fc
@@ -128,7 +129,7 @@ def main():
             cv2.rectangle(firstFrame, (sqx, sqy), (sqw, sqh), (255, 255, 0), 2)
             # cv2.rectangle(firstFrame, (0, 0), (30, 40), (255, 255, 255), 1)
             cv2.imshow('frame', firstFrame)
-            cv2.imshow('thresh', thresh)
+            # cv2.imshow('thresh', thresh)
 
             firstFrame = secondFrame
             ret, secondFrame = cap.read()
