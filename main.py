@@ -126,7 +126,7 @@ def main():
                         (255, 255, 255), 1)
             cv2.putText(firstFrame, "Counted: " + str(predictedPeople), (10, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                         (255, 200, 0), 1)
-            cv2.rectangle(firstFrame, (sqx, sqy), (sqw, sqh), (255, 255, 0), 2)
+            # cv2.rectangle(firstFrame, (sqx, sqy), (sqw, sqh), (255, 255, 0), 2)
             # cv2.rectangle(firstFrame, (0, 0), (30, 40), (255, 255, 255), 1)
             cv2.imshow('frame', firstFrame)
             # cv2.imshow('thresh', thresh)
