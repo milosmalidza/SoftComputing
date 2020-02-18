@@ -109,7 +109,7 @@ def main():
                     if pot.potentialNotTick == 0:
                         potential.remove(pot)
 
-                cv2.rectangle(firstFrame, (int(pot.position[0]), int(pot.position[1])), (int(pot.position[0]) + int(pot.width), int(pot.position[1]) + int(pot.height)), (255, 255, 0), 1)
+                # cv2.rectangle(firstFrame, (int(pot.position[0]), int(pot.position[1])), (int(pot.position[0]) + int(pot.width), int(pot.position[1]) + int(pot.height)), (255, 255, 0), 1)
 
             for fc in filtered_contours:
                 x, y, w, h = fc
