@@ -1,3 +1,5 @@
+![Image description](https://raw.githubusercontent.com/milosmalidza/SoftComputing/master/poster.png)
+
 # Soft Computing
 
 Za izradu projekta korišćen je python 3.6 uz pomoć OpenCV i NumPy biblioteka
